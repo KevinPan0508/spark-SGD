@@ -24,13 +24,6 @@ def mapper(line):
     features = [ float(feature) for feature in feats ]
     return LabeledPoint(label, features)
 
-def mapper1(line):
-    feats = line.strip().split(",")
-    label = feats[len(feats) - 1]
-    feats = feats[: len(feats) - 1]
-    feats.insert(0,label)
-    features = [ float(feature) for feature in feats ]
-    return np.array(features)
 
 
 parsedData = data.map(mapper)
